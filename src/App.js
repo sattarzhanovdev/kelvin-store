@@ -28,6 +28,9 @@ function App() {
   
 
   React.useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(d => d.json())
+      .then(d => localStorage.setItem('ipAddress', d.ip));
     !cart && localStorage.setItem('kelvin_cart', JSON.stringify([]))
     !info && localStorage.setItem('info', JSON.stringify({
       name: '',

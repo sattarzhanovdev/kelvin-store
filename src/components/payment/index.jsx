@@ -2,6 +2,7 @@ import React from 'react'
 import c from './pay.module.scss'
 import { IMaskInput } from 'react-imask';
 import { AiOutlineClose } from 'react-icons/ai'
+import axios from 'axios';
 
 const Payment = ({setActive}) => {
   const info = JSON.parse(localStorage.getItem('info'))
@@ -17,6 +18,27 @@ const Payment = ({setActive}) => {
       mask: CardAvailableMask,
     }
   ];
+  
+  const publicKey = 'pk_a3bb7a21ac880f47df3c4aa854105';
+  
+  const paymentData = {
+    Amount: info.summa,                  // Сумма платежа (в копейках или центах)
+    Currency: 'RUB',               // Валюта платежа
+    IPAddress: localStorage.getItem('ipAddress'),        // IP-адрес клиента
+    Name: `${info.name} ${info.surname}`,             // Имя владельца карты
+    Email: info.email,     // Электронная почта клиента
+    CultureName: 'ru-RU',          // Язык интерфейса
+    CardHolderMessage: 'Спасибо за покупку!', // Сообщение владельцу карты
+  };
+
+  const pay = (e) => {
+    e.preventDefault()
+    axios.post('https://api.cloudpayments.ru/test', {
+      headers: {
+        Authorization: `Basic ${btoa(publicKey + ':')}`,
+      },
+    })
+  }
 
   return (
     <div className={c.payment__container}>
@@ -50,7 +72,7 @@ const Payment = ({setActive}) => {
               maxLength={3}
             />
           </div>
-          <button>Оплатить</button>
+          <button onClick={e => pay(e)}>Оплатить</button>
         </form>
       </div>
     </div>
