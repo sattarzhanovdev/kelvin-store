@@ -21,6 +21,7 @@ const Payment = ({setActive}) => {
   
   const publicKey = 'pk_a3bb7a21ac880f47df3c4aa854105';
   
+  
   const paymentData = {
     Amount: info.summa,                  // Сумма платежа (в копейках или центах)
     Currency: 'RUB',               // Валюта платежа
@@ -33,11 +34,32 @@ const Payment = ({setActive}) => {
 
   const pay = (e) => {
     e.preventDefault()
-    axios.post('https://api.cloudpayments.ru/test', {
+    const publicId = 'pk_a3bb7a21ac880f47df3c4aa854105'; // Замените на ваш реальный public id CloudPayments
+    const password = '60be40bc81506e4911cc9708b97131f7'; // Замените на ваш реальный пароль CloudPayments
+    const apiUrl = 'https://api.cloudpayments.ru';
+
+    const data = {
+      /* Ваши данные для запроса */
+    };
+
+    const auth = `${publicId}:${password}`;
+    const base64Auth = btoa(auth);
+
+    fetch(`${apiUrl}/test`, {
+      method: 'POST',
       headers: {
-        Authorization: `Basic ${btoa(publicKey + ':')}`,
+        'Content-Type': 'application/json',
+        Authorization: `Basic ${base64Auth}`,
       },
+      body: JSON.stringify(data),
     })
+      .then((response) => response.json())
+      .then((responseData) => {
+        console.log('Ответ от CloudPayments API:', responseData);
+      })
+      .catch((error) => {
+        console.error('Произошла ошибка:', error);
+      });
   }
 
   return (
