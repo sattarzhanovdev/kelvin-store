@@ -1,0 +1,65 @@
+.my_swiper {
+  height: 85%;
+  margin-top: 50px;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  :global(.swiper-slide) {
+    height: 245px !important;
+  }
+}
+
+.slide_img {
+  height: 230px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+
+:global(.swiper-button-prev) {
+  top: 22px !important;
+  z-index: 10;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 8px;
+  background: #282626;
+  height: 39px !important;
+  width: 100% !important;
+  left: 0 !important;
+  transition: .2s;
+
+  &:hover {
+    box-shadow: 0px 4px 48px 0px #FFFFFF14;
+  }
+}
+
+:global(.swiper-button-prev:after) {
+  transform: rotate(90deg);
+  color: rgba(255, 255, 255, 1);
+  font-size: 15px !important;
+}
+
+:global(.swiper-button-next) {
+  bottom: 0 !important;
+  top: initial !important;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: #282626;
+  height: 39px !important;
+  width: 100% !important;
+  right: 0 !important;
+  transition: .2s;
+
+  &:hover {
+    box-shadow: 0px 4px 48px 0px #FFFFFF14;
+  }
+}
+
+:global(.swiper-button-next:after) {
+  transform: rotate(90deg);
+  color: rgba(255, 255, 255, 1);
+  font-size: 15px !important;
+}

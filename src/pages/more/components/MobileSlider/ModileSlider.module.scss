@@ -1,0 +1,39 @@
+.mobile_my_swiper {
+  width: 80%;
+  height: 475px;
+  padding-bottom: 21px !important;
+
+  @media (max-width: 425px) {
+    width: 90%;
+  }
+
+  :global(.swiper-slide) {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .mobile_slide_img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  :global(.swiper-pagination-bullets) {
+    bottom: 0 !important;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    background: rgba(255, 255, 255, 0.40);
+    transition: .5s;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    border-radius: 24px;
+    background: #13ED29;
+    width: 24px;
+    height: 6px;
+    transition: .5s;
+  }
+}

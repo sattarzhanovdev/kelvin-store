@@ -1,0 +1,49 @@
+.products {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 100px 0;
+
+  .title {
+    text-align: center;
+    margin-bottom: 72px;
+    @media (max-width: 425px) {
+      margin-bottom: 40px;
+    }
+    h1 {
+      color: #FFF;
+      font-size: 32px;
+      font-style: normal;
+      font-family: 'Onest Regular';
+      font-weight: 600;
+      line-height: 32px;
+      margin: 0;
+    }
+  }
+
+  .container {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 56px;
+
+    @media (max-width: 790px) {
+      gap: 140px;
+    }
+
+    @media (max-width: 500px) {
+      gap: 40px;
+    }
+
+    >div:nth-child(even) {
+      margin-top: 50px;
+
+      @media (max-width: 500px) {
+        margin-top: 0;
+      }
+    }
+  }
+}

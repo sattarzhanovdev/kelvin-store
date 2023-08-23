@@ -1,0 +1,39 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+    .title{
+        width: 100%;
+        max-width: 1116px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin: 0 24px 0 40px;
+        position: relative;
+        p{
+            position: absolute;
+            left: 0;
+            color: rgba($color: white, $alpha: 60%);
+            font-family: 'Onest Medium';
+            cursor: pointer;
+            @media (max-width: 1224px) {
+                display: none;
+            }
+        }
+        h1{
+            color: white;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: 'Onest Medium';
+            @media (max-width: 768px) {
+                font-size: 24px;
+                margin-right: 5%;
+            }
+            @media (max-width: 500px) {
+                font-size: 20px;
+                margin-right: 6%;
+            }
+        }
+    }
+}

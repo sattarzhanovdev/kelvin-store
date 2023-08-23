@@ -1,0 +1,46 @@
+.pay {
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 384px;
+  margin-top: 8px;
+  padding: 12px 24px;
+
+  @media (max-width: 1242px) {
+    width: 95%;
+    margin-bottom: 8px;
+  } 
+  @media (max-width: 1130px) {
+    width: 90%;
+  } 
+  @media (max-width: 762px) {
+    width: 84%;
+  } 
+  @media (max-width: 416px) {
+    width: 76%;
+  } 
+  @media (max-width: 500px) {
+    width: 329px;
+  }
+  @media (max-width: 375px) {
+    width: 295px;
+  }
+  @media (max-width: 320px) {
+    width: 224px;
+  }
+
+  .block_1 {
+    p {
+      color: #FFF;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 28px;
+      /* 140% */
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

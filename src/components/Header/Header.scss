@@ -1,0 +1,41 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 0px;
+    > .navbarMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .navLine {
+            width: 100px;
+            background-color: white;
+            height: 2px;
+        }
+    }
+    > .navbarRight {
+        > button {
+            width: 160px;
+            height: 35px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 20px;
+            color: white;
+            font-weight: 600;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .cartBadge {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #434141;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            > img {
+                width: 50%;
+            }
+        }
+    }
+}

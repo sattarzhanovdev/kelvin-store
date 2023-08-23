@@ -1,0 +1,41 @@
+.policy {
+  margin: 120px 48px 0;
+
+  @media (max-width: 768px) {
+    margin: 120px 24px 0;
+  }
+
+  @media (max-width: 500px) {
+    margin: 120px 10px 0;
+  }
+
+  .title {
+    text-align: center;
+
+    h2 {
+      color: #FFF;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 32px;
+      margin: 0;
+    }
+  }
+
+  .text {
+    margin-top: 32px;
+
+    div {
+      margin-bottom: 30px;
+
+      p {
+        margin: 0;
+        color: #FFF;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 28px
+      }
+    }
+  }
+}

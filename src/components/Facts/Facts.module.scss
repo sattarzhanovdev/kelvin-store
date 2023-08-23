@@ -1,0 +1,9 @@
+.facts {
+  width: 95%;
+  margin: 0 auto;
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

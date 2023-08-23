@@ -1,0 +1,119 @@
+.makingOrder{
+    max-width: 432px;
+    background: rgba($color: white, $alpha: 10%);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    width: 100%;
+    @media (max-width: 490px) {
+        width: 80%;
+    }
+    @media (max-width: 1350px) {
+        width: 97%;
+        max-width: none;
+    } 
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column-reverse;
+    } 
+    @media (max-width: 1109px) {
+        width: 92%;
+    } 
+    @media (max-width: 500px) {
+        width: 345px;
+        padding: 16px;
+    } 
+    @media (max-width: 375px) {
+        width: 311px;
+    } 
+    @media (max-width: 320px) {
+        width: 270px;
+    } 
+    button{
+        width: 100%;
+        height: 56px;
+        border-radius: 50px;
+        background: #13ED29;
+        color: #141212;
+        border: 0;
+        font-size: 16px;
+        font-family: 'Onest Bold';
+        cursor: pointer;
+        margin-bottom: 24px;
+        @media (max-width: 1268px) {
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            margin-bottom: 0;
+            margin-top: 16px;
+        }
+        
+    }
+    .down{
+        width: 100%;
+        // .line{
+        //     width: 384px;
+        //     height: 1px;
+        //     background: rgba($color: white, $alpha: 10%);
+        //     margin-bottom: 16px;
+        //     @media (max-width: 1268px) {
+        //         width: 100%;
+        //     }
+        //     &:nth-child(1){
+        //         @media (max-width: 768px) {
+        //             display: none;
+        //         }
+        //     }
+        // } 
+        // .cart{
+        //     width: 384px;
+        //     @media (max-width: 1268px) {
+        //         width: 100%;
+        //     }
+        //     h3{
+        //         color: white;
+        //         font-weight: 700;
+        //         font-size: 20px;
+        //         margin: 0;
+        //         margin-bottom: 18px;
+        //         font-weight: 500;
+        //     }
+        //     p{
+        //         width: 100%;
+        //         display: flex;
+        //         align-items: center;
+        //         justify-content: space-between;
+        //         font-weight: bold;
+        //         color: white;
+        //         padding: 0;
+        //         margin: 12px 0;
+        //         font-weight: 500;
+        //         span{
+        //             color: rgba($color: white, $alpha: 60%);
+        //         }
+        //     }
+        // }
+        h3{
+            @media (max-width: 1268px) {
+                width: 100%;
+            }
+            margin: 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            font-family: 'Onest Bold';
+            justify-content: space-between;
+            font-weight: 550;
+            @media (max-width: 500px) {
+                font-size: 20px;
+            }
+            @media (max-width: 320px) {
+                font-size: 18px;
+            }
+            span{
+                font-family: 'Onest Medium';
+            }
+        }
+    }
+}
