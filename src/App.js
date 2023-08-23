@@ -13,7 +13,8 @@ axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
 
 function App() {
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
-  // const location = JSON.parse(localStorage.getItem('location'))
+  const info = JSON.parse(localStorage.getItem('info'))
+
   const path = useLocation().pathname
   const lenis = new Lenis()
   const [footerState, setFooterState] = React.useState(false)
@@ -28,6 +29,18 @@ function App() {
 
   React.useEffect(() => {
     !cart && localStorage.setItem('kelvin_cart', JSON.stringify([]))
+    !info && localStorage.setItem('info', JSON.stringify({
+      name: '',
+      surname: '',
+      email: '',
+      phone: '',
+      city: '',
+      address: '',
+      house: '',
+      apartment: '',
+      index: '',
+      comment: ''
+    }))
     localStorage.setItem('discount', 0) 
 
     // !location && navigator.geolocation.getCurrentPosition(location => {

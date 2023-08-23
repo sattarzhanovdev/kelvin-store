@@ -1,0 +1,107 @@
+.payment__container{
+  width: 100%;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 60%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .payment{
+    width: 450px;
+    height: auto;
+    background: #F6FAFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 10px;
+    position: relative;
+    .close{
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      li{
+        list-style: none;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+    .logo{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      &::before{
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #000000;
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+      }
+      h3{
+        margin: 0;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+      p{
+        margin: 0;
+        font-size: 18px;
+        color: black;
+      }
+    }
+    .settings{
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      input{
+        width: 350px;
+        padding: 0 15px;
+        height: 46px;
+        font-size: 16px;
+        font-weight: bold;
+        border: 2px solid rgb(46,113,252);
+        border-bottom: 0;
+        border-radius: 10px 10px 0 0;
+        outline: none;
+      }
+      div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input{
+          width: 160px;
+          padding: 0 14.5px;
+          outline: none;
+          border: 2px solid rgb(46,113,252);
+
+          &:nth-child(1){
+            border-radius: 0 0 0 10px;
+          }
+          &:nth-child(2){
+            border-radius: 0 0 10px 0;
+            border-left: 0;
+          }
+        }
+      }
+      button{
+        margin-top: 25px;
+        width: 100%;
+        height: 52px;
+        font-weight: bold;
+        background: rgb(46,113,252);
+        color: white;
+        border-radius: 10px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

@@ -9,6 +9,8 @@ const DeliveryInfo = ({active2, setActive2}) => {
   const [streetResult, setStreetResult] = React.useState(null)
   const [ activeResStreet, setActiveResStreet ] = React.useState(false)
 
+  const info = JSON.parse(localStorage.getItem('info'))
+
   const [ active, setActive ] = React.useState({
     first: false,
     second: false,
@@ -29,15 +31,20 @@ const DeliveryInfo = ({active2, setActive2}) => {
       mask: PhoneMask,
     }
   ];
+
   return (
     <div className={c.deliveryInfo}>
       <h3>Ваши данные для доставки</h3>
       <form>
         <div>
           <input 
-            type="text"s
+            type="text"
             className={active2.first ? c.active : null}
             onChange={e => {
+              localStorage.setItem('info', JSON.stringify({
+                ...info,
+                name: e.target.value
+              }))
               setActive2({
                 ...active==false,
                 first: true
@@ -66,6 +73,10 @@ const DeliveryInfo = ({active2, setActive2}) => {
                 ...active==false,
                 second: true
               })
+              localStorage.setItem('info', JSON.stringify({
+                ...info,
+                surname: e.target.value
+              }))
               if(e.target.value.length !== 0 ){
                 setActive({
                   ...active,
@@ -87,6 +98,10 @@ const DeliveryInfo = ({active2, setActive2}) => {
             type="email" 
             className={active2.third ? c.active : null}
             onChange={e => {
+              localStorage.setItem('info', JSON.stringify({
+                ...info,
+                email: e.target.value
+              }))
               setActive2({
                 ...active==false,
                 third: true
@@ -112,6 +127,10 @@ const DeliveryInfo = ({active2, setActive2}) => {
             mask={phoneMask}
             id='phoneInput'
             onChange={e => {
+              localStorage.setItem('info', JSON.stringify({
+                ...info,
+                phone: e.target.value
+              }))
               setActive2({
                 ...active==false,
                 fourth: true
@@ -145,6 +164,10 @@ const DeliveryInfo = ({active2, setActive2}) => {
                 id={'suggest'}
                 value={cityName}
                 onChange={e => {
+                  localStorage.setItem('info', JSON.stringify({
+                    ...info,
+                    city: e.target.value
+                  }))
                   setCityName(e.target.value)
                   setActive2({
                     ...active==false,
@@ -173,6 +196,10 @@ const DeliveryInfo = ({active2, setActive2}) => {
                 className={active2.sixth ? c.active : null}
                 value={streetName}
                 onChange={e => {
+                  localStorage.setItem('info', JSON.stringify({
+                    ...info,
+                    address: e.target.value
+                  }))
                   setStreetName(e.target.value)
                   setActive2({
                     ...active==false,
@@ -193,7 +220,7 @@ const DeliveryInfo = ({active2, setActive2}) => {
                   }
                 }}
               />  
-              <span className={active.sixth ? c.active : null}>Название улицы и номер дома </span>
+              <span className={active.sixth ? c.active : null}>Название улицы </span>
               {
                 activeResStreet ?
                   <div className={c.cityRes}>
@@ -225,6 +252,10 @@ const DeliveryInfo = ({active2, setActive2}) => {
                 className={active2.seventh ? c.active : null}
                 id={'suggest'}
                 onChange={e => {
+                  localStorage.setItem('info', JSON.stringify({
+                    ...info,
+                    house: e.target.value
+                  }))
                   setActive2({
                     ...active==false,
                     seventh: true
@@ -250,6 +281,10 @@ const DeliveryInfo = ({active2, setActive2}) => {
                 className={active2.eighth ? c.active : null}
                 id={'suggest'}
                 onChange={e => {
+                  localStorage.setItem('info', JSON.stringify({
+                    ...info,
+                    apartment: e.target.value
+                  }))
                   setActive2({
                     ...active==false,
                     eighth: true
@@ -275,6 +310,10 @@ const DeliveryInfo = ({active2, setActive2}) => {
                 className={active2.ninth ? c.active : null}
                 id={'suggest'}
                 onChange={e => {
+                  localStorage.setItem('info', JSON.stringify({
+                    ...info,
+                    index: e.target.value
+                  }))
                   setActive2({
                     ...active==false,
                     ninth: true
@@ -300,6 +339,10 @@ const DeliveryInfo = ({active2, setActive2}) => {
                 id={c.comment}
                 className={active2.tenth ? c.active_comment : c.comment}
                 onChange={e => {
+                  localStorage.setItem('info', JSON.stringify({
+                    ...info,
+                    comment: e.target.value
+                  }))
                   setActive2({
                     ...active==false,
                     tenth: true
