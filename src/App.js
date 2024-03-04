@@ -8,7 +8,7 @@ import Lenis from '@studio-freight/lenis'
 import axios from 'axios'
 import { useLocation } from 'react-router-dom'
 
-axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
+axios.defaults.baseURL = 'https://romazan.pythonanywhere.com'
 
 
 function App() {
